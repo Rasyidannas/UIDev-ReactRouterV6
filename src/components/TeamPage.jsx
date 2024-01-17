@@ -4,6 +4,7 @@ import useTeamsArticles from "../hooks/useTeamsArticles";
 import useTeam from "../hooks/useTeam";
 import TeamLogo from "./TeamLogo";
 import { slugify } from "../utils";
+import Loading from "./Loading";
 
 //this is interaction with API
 function useTeamPageData(teamId) {
@@ -29,7 +30,7 @@ export default function TeamPage() {
   console.log({ teamNames, articles, team });
 
   if (loading === true) {
-    return <p>LOADING</p>;
+    return <Loading />;
   }
 
   if (!teamNames.includes(teamId)) {
